@@ -18,5 +18,5 @@ export default function GiscusComments() {
     );
   }
 
-  return <div></div>;
+  return <></>;
 }

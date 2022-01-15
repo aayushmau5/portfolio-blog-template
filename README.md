@@ -1,22 +1,10 @@
-![Banner](https://user-images.githubusercontent.com/54525741/149302774-07732e60-26d4-46bf-9529-825563af5d45.png)
+# PORTFOLIO-BLOG-TEMPLATE
 
-# AAYUSHSAHU.COM
-
-My portfolio website powered by:
+Template from my portfolio/blog website powered by:
 
 - NextJS with TypeScript
 - CSS(no libraries, preprocessor, etc.)
 - MDX(for blogs)
-
-## Features
-
-- Dynamic OpenGraph image generation for blogs using Cloudinary
-- Commenting system powered by [Giscus](https://giscus.app/)
-- Search blogs by tags
-
-Hosted on **Vercel** 💪
-
-Feature requests are welcome :)
 
 ## Project Overview
 
@@ -32,11 +20,6 @@ Feature requests are welcome :)
 
 ## Running Locally
 
-- Fork/Clone this repo
+- Use the template
 - Install dependencies `npm install`
 - Run locally in development mode `npm run dev`
-
-## To-do
-
-- [ ] Move to `next-seo`(https://github.com/garmeeh/next-seo#readme)
-- [ ] Code highlight lines feature (https://github.com/timlrx/rehype-prism-plus/issues/20)
