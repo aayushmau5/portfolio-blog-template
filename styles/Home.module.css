@@ -1,0 +1,116 @@
+.container {
+  animation: load 0.5s;
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.container code {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+.logoContainer {
+  border: 5px solid rgb(34, 34, 34);
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logoContainer img {
+  transform: scale(1.2);
+}
+
+.highlight {
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #21daa2, #43dce5, #36c3ef, #4a5ae9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.highlight::selection {
+  background-color: rgba(88, 88, 88, 0.356);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+.waving {
+  display: inline-block;
+  animation-name: wave;
+  animation-duration: 3.5s;
+  transform-origin: 70% 70%;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.nextStepsContainer {
+  margin-top: 20px;
+  padding: 3px;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(45deg, #21daa2, #43dce5, #36c3ef, #4a5ae9);
+}
+
+.nextSteps {
+  background-color: rgb(10, 10, 10);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.nextSteps p {
+  margin-top: 0;
+}
+
+.nextSteps a {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    flex-direction: row;
+  }
+}

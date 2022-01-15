@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  color: gray;
+  padding: 1rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.socialsContainer {
+  margin-left: auto;
+}
+
+.container svg {
+  height: 25px;
+  width: 25px;
+  transition: transform linear 0.1s;
+}
+
+.container a:not(:last-child) {
+  margin-right: 10px;
+}
+
+.container a:focus svg,
+.container a:hover svg {
+  transform: scale(1.2);
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container a {
+    display: block;
+  }
+}

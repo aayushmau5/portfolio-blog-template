@@ -1,0 +1,70 @@
+.container {
+  animation: load 0.5s;
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.noOfBlogs {
+  color: rgb(145, 145, 145);
+  margin-top: 0;
+}
+
+.blogsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.blogContainer {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  word-wrap: break-word;
+  transition: transform linear 0.1s;
+  width: 50%;
+}
+
+.blogContainer:hover {
+  background-color: #191919;
+}
+
+.blogContainer:active {
+  transform: scale(0.98);
+}
+
+.blogContainer:focus {
+  outline: 2px solid rgb(236, 236, 236);
+}
+
+.blogContainer h3 {
+  margin: 0;
+}
+
+.date {
+  font-size: 0.9rem;
+}
+
+.readingTime {
+  color: gray;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .blogsContainer {
+    flex-direction: column;
+  }
+
+  .blogContainer {
+    width: 100%;
+  }
+}

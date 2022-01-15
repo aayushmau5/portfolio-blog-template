@@ -1,0 +1,18 @@
+.container h1,
+.container h2 {
+  margin-bottom: 0;
+}
+
+.container {
+  animation: load 0.5s;
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
