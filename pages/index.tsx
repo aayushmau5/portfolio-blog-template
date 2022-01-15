@@ -3,17 +3,14 @@ import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
 
 import { PageSEO } from "@/components/SEO";
-import Date from "@/components/Date";
-
 import Logo from "@/public/image.png";
 import { sortedPostData } from "@/utils/getPosts";
-
-import blogStyles from "@/styles/Blog.module.css";
 import styles from "@/styles/Home.module.css";
 import getResumeLink from "@/utils/getResumeLink";
 import { createRSSFile } from "@/utils/generateRSSFeed";
+import ShowRecentArticles from "@/components/React/ShowRecentArticles";
 
-export default function Index({ firstPost, secondPost, resumeFileNameLink }) {
+export default function Index({ recentPosts, resumeFileNameLink }) {
   return (
     <>
       <PageSEO
@@ -55,35 +52,7 @@ export default function Index({ firstPost, secondPost, resumeFileNameLink }) {
           </div>
         </div>
 
-        <div>
-          <h3>Recent articles</h3>
-          <div className={blogStyles.blogsContainer}>
-            <Link key={firstPost.slug} href={`/blog/${firstPost.slug}`}>
-              <a className={blogStyles.blogContainer}>
-                <p className={blogStyles.date}>
-                  <Date dateString={firstPost.date} />
-                </p>
-                <h3>{firstPost.title}</h3>
-                <p className={blogStyles.readingTime}>
-                  {firstPost.readingTime.text}
-                </p>
-                <p className={blogStyles.additionalInfo}></p>
-              </a>
-            </Link>
-            <Link key={secondPost.slug} href={`/blog/${secondPost.slug}`}>
-              <a className={blogStyles.blogContainer}>
-                <p className={blogStyles.date}>
-                  <Date dateString={secondPost.date} />
-                </p>
-                <h3>{secondPost.title}</h3>
-                <p className={blogStyles.readingTime}>
-                  {secondPost.readingTime.text}
-                </p>
-                <p className={blogStyles.additionalInfo}></p>
-              </a>
-            </Link>
-          </div>
-        </div>
+        <ShowRecentArticles articles={recentPosts} />
 
         <div className={styles.nextStepsContainer}>
           <div className={styles.nextSteps}>
@@ -105,15 +74,17 @@ export default function Index({ firstPost, secondPost, resumeFileNameLink }) {
               <BsArrowRightShort />
               Contact me
             </a>
-            <a
-              href={`/resume/${resumeFileNameLink}`}
-              target="_blank"
-              rel="noreferrer"
-              className="styledLink"
-            >
-              <BsArrowRightShort />
-              See my resume
-            </a>
+            {resumeFileNameLink ? (
+              <a
+                href={`/resume/${resumeFileNameLink}`}
+                target="_blank"
+                rel="noreferrer"
+                className="styledLink"
+              >
+                <BsArrowRightShort />
+                See my resume
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
@@ -123,16 +94,17 @@ export default function Index({ firstPost, secondPost, resumeFileNameLink }) {
 
 export const getStaticProps = async () => {
   const postsData = sortedPostData;
-  const firstPost = postsData[0];
-  const secondPost = postsData[1];
+  const recentPosts = [];
 
-  const resumeFileNameLink = getResumeLink();
+  if (postsData[0]) recentPosts.push(postsData[0]);
+  if (postsData[1]) recentPosts.push(postsData[1]);
+
+  const resumeFileNameLink = getResumeLink() || null;
   createRSSFile();
 
   return {
     props: {
-      firstPost,
-      secondPost,
+      recentPosts,
       resumeFileNameLink,
     },
   };

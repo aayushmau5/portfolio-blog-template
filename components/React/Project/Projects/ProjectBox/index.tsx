@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 export interface Project {
   name: string;
   description: string;
-  image: any;
+  image?: any;
   sourceLink: string;
   demoLink: string;
 }
