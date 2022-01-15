@@ -14,18 +14,30 @@ export default function Footer() {
     <div className={styles.container}>
       <p style={{ fontSize: "1rem" }}>Made with ❤️ by {config.username}</p>
       <div className={styles.socialsContainer}>
-        <a href={config.user.githubLink} target="_blank" rel="noreferrer">
-          <FaGithub />
-        </a>
-        <a href={config.user.linkedinLink} target="_blank" rel="noreferrer">
-          <FaLinkedinIn />
-        </a>
-        <a href={config.user.twitterLink} target="_blank" rel="noreferrer">
-          <FaTwitter />
-        </a>
-        <a href={config.user.devToLink} target="_blank" rel="noreferrer">
-          <FaDev />
-        </a>
+        {config.user.githubLink ? (
+          <a href={config.user.githubLink} target="_blank" rel="noreferrer">
+            <FaGithub />
+          </a>
+        ) : null}
+
+        {config.user.linkedinLink ? (
+          <a href={config.user.linkedinLink} target="_blank" rel="noreferrer">
+            <FaLinkedinIn />
+          </a>
+        ) : null}
+
+        {config.user.twitterLink ? (
+          <a href={config.user.twitterLink} target="_blank" rel="noreferrer">
+            <FaTwitter />
+          </a>
+        ) : null}
+
+        {config.user.devToLink ? (
+          <a href={config.user.devToLink} target="_blank" rel="noreferrer">
+            <FaDev />
+          </a>
+        ) : null}
+
         <a href="/rss.xml" target="_blank" rel="noreferrer">
           <FaRss />
         </a>

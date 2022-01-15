@@ -9,14 +9,12 @@ import styles from "@/styles/Home.module.css";
 import getResumeLink from "@/utils/getResumeLink";
 import { createRSSFile } from "@/utils/generateRSSFeed";
 import ShowRecentArticles from "@/components/React/ShowRecentArticles";
+import config from "config.json";
 
 export default function Index({ recentPosts, resumeFileNameLink }) {
   return (
     <>
-      <PageSEO
-        title="Aayush Kumar Sahu - Developer and Explorer"
-        description="aayushmau5' personal website"
-      />
+      <PageSEO title={config.title} description={config.description} />
       <div className={styles.container}>
         <div className={styles.heading}>
           <div>
@@ -25,19 +23,16 @@ export default function Index({ recentPosts, resumeFileNameLink }) {
               Hello <span className={styles.waving}>👋 </span>
             </h1>
             <p>
-              My name is <span className={styles.highlight}>aayushmau5</span>
-              (pronounced: aayushmouse).
+              My name is{" "}
+              <span className={styles.highlight}>{config.user.name}</span>
             </p>
             <p>
               I&apos;m a{" "}
               <span className={styles.highlight}>fullstack web developer</span>{" "}
-              based in India.
+              .
             </p>
             <p>
-              I like to babble about <code>Open-Source</code>,{" "}
-              <code>JavaScript/TypeScript</code>, <code>Linux</code>,{" "}
-              <code>Vim</code>(<code>vscode</code> works as well),{" "}
-              <code>Compilers</code>, or anything interesting :P
+              I like to babble about Open-Source, or anything interesting :P
             </p>
           </div>
           <div className={styles.logoContainer}>

@@ -7,10 +7,10 @@ import { sortedPostData } from "./getPosts";
 
 export function generateRSSFeed() {
   const feed = new Feed({
-    title: "Aayush Kumar Sahu - Developer and Explorer",
-    description: "aayushmau5' personal website",
+    title: config.title,
+    description: config.description,
     id: config.siteUrl,
-    copyright: "CC 2022, Aayush Kumar Sahu",
+    copyright: `CC 2022, ${config.user.name}`,
     link: config.siteUrl,
     favicon: `${config.siteUrl}/favicon.ico`,
     language: "en",
@@ -31,8 +31,6 @@ export function generateRSSFeed() {
       description: post.description,
     })
   );
-
-  feed.addCategory("Programming");
 
   return feed.rss2();
 }

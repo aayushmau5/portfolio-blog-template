@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageSEO
-        title="Projects | Aayush Kumar Sahu"
+        title="Projects"
         description="Checkout the projects made by me"
       />
       <div className={styles.container}>

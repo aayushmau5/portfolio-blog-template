@@ -49,10 +49,7 @@ export default function Blog({ postsData, tags }: Props) {
 
   return (
     <>
-      <PageSEO
-        title="Blog | Aayush Kumar Sahu"
-        description="Checkout the blogs written by me"
-      />
+      <PageSEO title="Blog" description="Checkout the blogs written by me" />
       <div className={styles.container}>
         <h1>Blog</h1>
         <p className={styles.noOfBlogs}>
