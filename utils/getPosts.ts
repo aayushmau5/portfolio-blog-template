@@ -73,11 +73,11 @@ export async function getPostData(slug: string) {
   const matterResult = matter(fileContents);
   matterResult.data.date = new Date(matterResult.data.date).toISOString();
   matterResult.data.readingTime = readingTime(matterResult.content);
-  if (matterResult.data.cover?.caption) {
+  if (matterResult.data.caption) {
     const caption = await remark()
       .use(html, { sanitize: false })
-      .process(matterResult.data.cover.caption);
-    matterResult.data.cover.caption = caption.toString();
+      .process(matterResult.data.caption);
+    matterResult.data.caption = caption.toString();
   }
 
   return {

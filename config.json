@@ -5,11 +5,28 @@
   "repoName": "aayushsahu.com",
   "siteUrl": "https://aayushsahu.com",
   "giscus": {
-    "repoId": "R_kgDOGZi2Mw",
-    "category": "Announcements",
-    "categoryId": "DIC_kwDOGZi2M84CAorJ",
+    "show": false,
+    "repoId": "<fill-in>",
+    "category": "<fill-in>",
+    "categoryId": "<fill-in>",
     "mapping": "pathname",
     "theme": "dark"
+  },
+  "cloudinary": {
+    "useCloudinary": false,
+    "cloudName": "<fill-in>",
+    "imagePublicId": "blog_banner.png",
+    "cloudinaryUrlBase": "https://res.cloudinary.com",
+    "version": "<fill-in>",
+    "titleFont": "roboto",
+    "titleExtraConfig": "_bold",
+    "textColor": "FFFFFF",
+    "textAreaWidth": 650,
+    "textAreaHeight": 450,
+    "titleFontSize": 40,
+    "imageWidth": 1200,
+    "imageHeight": 630,
+    "textBottomOffset": -40
   },
   "user": {
     "name": "Aayush Kumar Sahu",

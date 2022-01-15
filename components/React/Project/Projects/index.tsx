@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 import { Project, ProjectBox } from "./ProjectBox";
+import projectImage from "@/public/projects/aayushsahu.png";
 
 const projects: Project[] = [
   {
-    name: "Blog Project",
-    description: "A multi-user blog website made using React and NodeJS.",
-    sourceLink: "https://github.com/aayushmau5/blog-frontend",
-    demoLink: "https://aayushblogs.netlify.app/",
+    name: "Project name",
+    description: "project description",
+    image: <Image src={projectImage} alt="project image" />,
+    sourceLink: "https://github.com/aayushmau5",
+    demoLink: "https://github.com/aayushmau5",
   },
 ];
 

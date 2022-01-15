@@ -4,6 +4,8 @@ import SeparatorSvg from "../../SeparatorSvg";
 import styles from "./style.module.css";
 
 export default function NextPrevArticles({ recommendedPostList }) {
+  if (Object.keys(recommendedPostList).length === 0) return null;
+
   return (
     <>
       <SeparatorSvg stroke={"gray"} />

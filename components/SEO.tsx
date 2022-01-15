@@ -56,7 +56,10 @@ export const BlogSEO = ({ title, summary, date, slug }) => {
   const router = useRouter();
 
   const publishedAt = new Date(date).toISOString();
-  const featuredImage = CloudinaryMetaImageUrl({ title });
+  let featuredImage = "";
+
+  if (config.cloudinary.useCloudinary)
+    featuredImage = CloudinaryMetaImageUrl({ title });
 
   const authorDetails = {
     "@type": "Person",
@@ -116,19 +119,19 @@ export const BlogSEO = ({ title, summary, date, slug }) => {
 // thanks to: https://braydoncoyer.dev/blog/how-to-dynamically-create-open-graph-images-with-cloudinary-and-next.js
 export const CloudinaryMetaImageUrl = ({
   title,
-  cloudName = "dbsdoq31k",
-  imagePublicId = "blog_banner.png",
-  cloudinaryUrlBase = "https://res.cloudinary.com",
-  version = "v1641893609",
-  titleFont = "roboto",
-  titleExtraConfig = "_bold",
-  textColor = "FFFFFF",
-  textAreaWidth = 650,
-  textAreaHeight = 450,
-  titleFontSize = 40,
-  imageWidth = 1200,
-  imageHeight = 630,
-  textBottomOffset = -40,
+  cloudName = config.cloudinary.cloudName,
+  imagePublicId = config.cloudinary.imagePublicId,
+  cloudinaryUrlBase = config.cloudinary.cloudinaryUrlBase,
+  version = config.cloudinary.version,
+  titleFont = config.cloudinary.titleFont,
+  titleExtraConfig = config.cloudinary.titleExtraConfig,
+  textColor = config.cloudinary.textColor,
+  textAreaWidth = config.cloudinary.textAreaWidth,
+  textAreaHeight = config.cloudinary.textAreaHeight,
+  titleFontSize = config.cloudinary.titleFontSize,
+  imageWidth = config.cloudinary.imageWidth,
+  imageHeight = config.cloudinary.imageHeight,
+  textBottomOffset = config.cloudinary.textBottomOffset,
 }): string => {
   const imageConfig = [
     `w_${imageWidth}`,
@@ -158,8 +161,6 @@ export const CloudinaryMetaImageUrl = ({
     version,
     imagePublicId,
   ];
-
-  // "https://res.cloudinary.com/dbsdoq31k/image/upload/w_1200,h_630,c_fit,co_rgb:FFFFFF,y_-40,l_text:arial_60_bold:The%20visitor%20design%20pattern/v1641893609/blog_banner.png";
 
   return urlParts.join("/");
 };

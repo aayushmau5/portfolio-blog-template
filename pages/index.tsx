@@ -25,10 +25,8 @@ export default function Index({ recentPosts, resumeFileNameLink }) {
               Hello <span className={styles.waving}>👋 </span>
             </h1>
             <p>
-              My name is{" "}
-              <span className={styles.highlight}>Aayush Kumar Sahu</span>, aka,{" "}
-              <span className={styles.highlight}>aayushmau5</span>(pronounced:
-              aayushmouse).
+              My name is <span className={styles.highlight}>aayushmau5</span>
+              (pronounced: aayushmouse).
             </p>
             <p>
               I&apos;m a{" "}

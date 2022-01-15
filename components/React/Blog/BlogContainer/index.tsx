@@ -56,15 +56,15 @@ function ShowFrontMatter({ frontMatter }) {
           ))}
         </TagsContainer>
       ) : null}
-      {frontMatter.cover && frontMatter.cover.image && (
+      {frontMatter.image && (
         <div className={styles.coverImage}>
-          <img src={frontMatter.cover.image} alt={frontMatter.cover.alt} />
+          <img src={frontMatter.image} alt={frontMatter.alt} />
         </div>
       )}
-      {frontMatter.cover && frontMatter.cover.caption && (
+      {frontMatter.caption && (
         <div
           className={styles.caption}
-          dangerouslySetInnerHTML={{ __html: frontMatter.cover.caption }}
+          dangerouslySetInnerHTML={{ __html: frontMatter.caption }}
         />
       )}
     </div>
